@@ -11,7 +11,7 @@ public class Crystal : MonoBehaviour, ICombatable
     {
         if (attackStats.TryGetStatName("health", out float statValue))
         {
-            health -= (int)statValue;
+            health += (int)statValue;
             if (health <= 0)
             {
                 Destroy(owner.gameObject);

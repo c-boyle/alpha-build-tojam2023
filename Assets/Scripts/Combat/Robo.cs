@@ -5,7 +5,7 @@ using UnityEngine;
 public class Robo : MonoBehaviour, ICombatable
 {
     [field: SerializeField] public RoboMovement Movement { get; set; }
-    [field: SerializeField] public Stats RoboStats { get; set; }
+    [field: SerializeField] public Stats RoboStats { get; set; } = new();
     [SerializeField] private RoboMod roboModNorth;
     [SerializeField] private RoboMod roboModSouth;
     [SerializeField] private RoboMod roboModWest;
@@ -14,25 +14,41 @@ public class Robo : MonoBehaviour, ICombatable
     /// <param name="end">True if ending use, false if beginning</param>
     public void UseRoboModSouth(bool end)
     {
-        roboModSouth.Charging = !end;
+        if (roboModSouth != null)
+        {
+            roboModSouth.Owner = this;
+            roboModSouth.Charging = !end;
+        }
     }
 
     /// <param name="end">True if ending use, false if beginning</param>
     public void UseRoboModNorth(bool end)
     {
-        roboModNorth.Charging = !end;
+        if (roboModNorth != null)
+        {
+            roboModNorth.Owner = this;
+            roboModNorth.Charging = !end;
+        }
     }
 
     /// <param name="end">True if ending use, false if beginning</param>
     public void UseRoboModEast(bool end)
     {
-        roboModEast.Charging = !end;
+        if (roboModEast != null)
+        {
+            roboModEast.Owner = this;
+            roboModEast.Charging = !end;
+        }
     }
 
     /// <param name="end">True if ending use, false if beginning</param>
     public void UseRoboModWest(bool end)
     {
-        roboModWest.Charging = !end;
+        if (roboModWest != null)
+        {
+            roboModWest.Owner = this;
+            roboModWest.Charging = !end;
+        }
     }
 
     public void ReceiveAttack(Stats attackStats)

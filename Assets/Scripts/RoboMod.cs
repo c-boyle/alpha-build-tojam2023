@@ -9,14 +9,14 @@ public class RoboMod : MonoBehaviour, ICombatable
     [SerializeField] private Animator animator;
     [SerializeField] private bool canHoldActivatedAttack;
     [SerializeField] private bool maxChargeTimeCopiesAnimationLength = true;
-    [SerializeField][ConditionalField(nameof(maxChargeTimeCopiesAnimationLength))] private float maxChargeSeconds = 1f;
+    [SerializeField][ConditionalField(nameof(maxChargeTimeCopiesAnimationLength), inverse:true)] private float maxChargeSeconds = 1f;
 
     [SerializeField] private Stats userEffects = new();
     [SerializeField] private Stats defensiveStats = new();
     [SerializeField] private Stats passiveContactStats = new();
     [SerializeField] private Stats attackContactStats = new();
 
-    private Robo owner;
+    public Robo Owner { get; set; }
 
     private DateTime chargeStartTime = DateTime.MinValue;
     private DateTime chargeStopTime = DateTime.MinValue;
@@ -24,37 +24,14 @@ public class RoboMod : MonoBehaviour, ICombatable
 
     private bool activated = false;
 
-    private bool haveCheckedChargingClip = false;
-    private AnimationClip _chargingClip = null;
-    private AnimationClip ChargingClip
-    {
-        get
-        {
-            bool chargingTimeIsZero = !maxChargeTimeCopiesAnimationLength && maxChargeSeconds <= 0f;
-            if (chargingTimeIsZero)
-            {
-                return null;
-            }
-            if (!haveCheckedChargingClip)
-            {
-                foreach (var clip in animator.runtimeAnimatorController.animationClips)
-                {
-                    if (clip.name.ToLower().Contains("charging"))
-                    {
-                        _chargingClip = clip;
-                    }
-                }
-                haveCheckedChargingClip = true;
-            }
-            return _chargingClip;
-        }
-    }
+    private AnimationClip chargingClip = null;
+    private AnimationClip activatingClip = null;
 
     private float MaxChargeSeconds
     {
         get
         {
-            return maxChargeTimeCopiesAnimationLength ? ChargingClip.length : maxChargeSeconds;
+            return maxChargeTimeCopiesAnimationLength && chargingClip != null ? chargingClip.length : maxChargeSeconds;
         }
     }
 
@@ -74,27 +51,36 @@ public class RoboMod : MonoBehaviour, ICombatable
                 }
                 return;
             }
-            if (animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
+            bool chargingStarted = value && !_charging;
+            if (chargingStarted && animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
             {
-                bool chargingStarted = value && !_charging;
-                if (chargingStarted)
-                {
-                    chargeStartTime = DateTime.Now;
-                }
-                bool chargeStopped = !value && _charging;
-                if (chargeStopped)
-                {
-                    chargeStopTime = DateTime.Now;
-                }
-                _charging = value;
-                animator.SetBool("charging", _charging);
+                chargeStartTime = DateTime.Now;
+                animator.SetBool("charging", true);
             }
+            bool chargeStopped = !value && _charging;
+            if (chargeStopped)
+            {
+                chargeStopTime = DateTime.Now;
+                animator.SetBool("charging", false);
+            }
+            _charging = value;
         }
     }
 
-    private void Init(Robo owner)
+    private void Start()
     {
-        this.owner = owner;
+        foreach (var clip in animator.runtimeAnimatorController.animationClips)
+        {
+            string clipName = clip.name.ToLower();
+            if (clipName.Contains("charging"))
+            {
+                chargingClip = clip;
+            } else if (clipName.Contains("activating"))
+            {
+                activatingClip = clip;
+            }
+        }
+        animator.SetBool("has_activating", activatingClip.length != 0f);
     }
 
     private void Update()
@@ -107,11 +93,11 @@ public class RoboMod : MonoBehaviour, ICombatable
         if (!activated && isInActiveState)
         {
             activated = true;
-            owner.RoboStats.ApplyStats(userEffects);
+            Owner.RoboStats.ApplyStats(userEffects);
         } else if (activated && !isInActiveState)
         {
             activated = canHoldActivatedAttack && Charging;
-            owner.RoboStats.ApplyStats(userEffects, !activated);
+            Owner.RoboStats.ApplyStats(userEffects, !activated);
         }
     }
 
@@ -171,7 +157,6 @@ public class RoboMod : MonoBehaviour, ICombatable
     {
         var statsCopy = attackStats.GetCopyDic();
         this.defensiveStats.ApplyToStats(statsCopy);
-        owner.RoboStats.ApplyStats(statsCopy);
-
+        Owner.RoboStats.ApplyStats(statsCopy);
     }
 }
