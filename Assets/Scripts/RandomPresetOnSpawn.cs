@@ -14,7 +14,7 @@ public class RandomPresetOnSpawn : MonoBehaviour {
 
   private void Start() {
     Player randomPreset = useCompletelyRandomRobo ? presetsScriptableObject.RoboBodies[Random.Range(0, presetsScriptableObject.RoboBodies.Count - 1)] : presetsScriptableObject.PresetRobos[Random.Range(0, presetsScriptableObject.PresetRobos.Count - 1)];
-    Player spawnedPlayer = Instantiate(randomPreset, transform, false);
+    Player spawnedPlayer = Instantiate(randomPreset, transform, true);
     if (useCompletelyRandomRobo) {
       RoboMod spawnedRoboModEast = Instantiate(presetsScriptableObject.RoboMods[Random.Range(0, presetsScriptableObject.RoboMods.Count - 1)], spawnedPlayer.Robo.RoboModEastPos, false).GetComponentInChildren<RoboMod>();
       RoboMod spawnedRoboModWest = Instantiate(presetsScriptableObject.RoboMods[Random.Range(0, presetsScriptableObject.RoboMods.Count - 1)], spawnedPlayer.Robo.RoboModWestPos, false).GetComponentInChildren<RoboMod>();
