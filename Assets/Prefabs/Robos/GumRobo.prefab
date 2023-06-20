@@ -266,7 +266,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 4753299932227599761}
-  speed: 10
 --- !u!114 &4753299932227599764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -407,6 +406,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crystal
       objectReference: {fileID: 0}
+    - target: {fileID: 7953403772576612428, guid: 6ff9e7317016c844fa0dbc3c8e04bc2e, type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 4753299932227599761}
     - target: {fileID: 7953403772576612428, guid: 6ff9e7317016c844fa0dbc3c8e04bc2e, type: 3}
       propertyPath: owner
       value: 

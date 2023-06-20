@@ -179,7 +179,7 @@ public class RoboMod : MonoBehaviour, ICombatable
 
     private void HandleKnockback(Collision2D collision, Stats stats)
     {
-        if (stats.TryGetStatName(StatNames.KNOCKBACK, out float knockback))
+        if (stats.TryGetStatName(StatNames.KNOCKBACK, out float knockback) && knockback > 0f)
         {
             collision.rigidbody.velocity = collision.GetContact(0).normal * -knockback;
         }
