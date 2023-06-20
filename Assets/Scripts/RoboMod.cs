@@ -49,6 +49,7 @@ public class RoboMod : MonoBehaviour, ICombatable
                 {
                     animator.SetTrigger("instant_charge");
                 }
+                _charging = value;
                 return;
             }
             bool chargingStarted = value && !_charging;
@@ -86,18 +87,21 @@ public class RoboMod : MonoBehaviour, ICombatable
     private void Update()
     {
         bool isInActiveState = animator.GetCurrentAnimatorStateInfo(0).IsName("Activated");
-        if (canHoldActivatedAttack && isInActiveState && Charging)
+        if (isInActiveState)
         {
-            return;
-        }
-        if (!activated && isInActiveState)
-        {
-            activated = true;
-            Owner.RoboStats.ApplyStats(userEffects);
-        } else if (activated && !isInActiveState)
+            if ((canHoldActivatedAttack && Charging && !activated) || !activated)
+            {
+                activated = true;
+                Owner.RoboStats.ApplyStats(userEffects);
+            }
+        } else if (activated)
         {
             activated = canHoldActivatedAttack && Charging;
             Owner.RoboStats.ApplyStats(userEffects, !activated);
+            if (activated)
+            {
+                animator.Play("Base Layer.Activated", 0, 0f);
+            }
         }
     }
 
