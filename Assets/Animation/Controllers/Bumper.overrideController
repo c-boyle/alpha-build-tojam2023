@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Bumper
+  m_Controller: {fileID: 9100000, guid: 410349dfd8fde93458068669f011db4a, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 06df9b41b58674f4280a0d97ea9cb8dc, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 167195886321b6941b8a6b9ab006b998, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 7ffcb13f0a3b4754b8e3c2622988148a, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 944d46373edabc14ba0408bed10fce86, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: f2a895b5ef8f58a4cbf74868309a370a, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 53de959a05031af468afc11132dd42e9, type: 2}
