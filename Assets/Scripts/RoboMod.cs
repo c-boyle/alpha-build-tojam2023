@@ -10,6 +10,8 @@ public class RoboMod : MonoBehaviour, ICombatable
     [SerializeField] private bool canHoldActivatedAttack;
     [SerializeField] private bool maxChargeTimeCopiesAnimationLength = true;
     [SerializeField][ConditionalField(nameof(maxChargeTimeCopiesAnimationLength), inverse:true)] private float maxChargeSeconds = 1f;
+    [SerializeField] private bool useParticleEffectForActivated = false;
+    [SerializeField][ConditionalField(nameof(useParticleEffectForActivated))] private ParticleSystem activatedParticleEffect = null;
 
     [SerializeField] private Stats userEffects = new();
     [SerializeField] private Stats defensiveStats = new();
@@ -93,6 +95,10 @@ public class RoboMod : MonoBehaviour, ICombatable
             {
                 activated = true;
                 Debug.Log("User effects applied");
+                if (useParticleEffectForActivated)
+                {
+                    activatedParticleEffect.Play();
+                }
                 Owner.RoboStats.ApplyStats(userEffects);
             }
         } else if (activated)
@@ -104,6 +110,10 @@ public class RoboMod : MonoBehaviour, ICombatable
                 animator.Play("Base Layer.Activated", 0, 0f);
             } else
             {
+                if (useParticleEffectForActivated)
+                {
+                    activatedParticleEffect.Stop();
+                }
                 Owner.RoboStats.ApplyStats(userEffects, true);
             }
         }

@@ -8,6 +8,7 @@ public class ParticleProjectile : MonoBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
+        Debug.Log("Particle collision");
         if (other.TryGetComponent(out ICombatable combatable))
         {
             combatable.ReceiveAttack(projectileStats);
