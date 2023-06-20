@@ -4,11 +4,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System;
 
-public static class Helpers
-{
-    public static void ResetScene()
-    {
-        var activeScene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(activeScene.name);
-    }
+/// <summary>
+/// Offers an assortment of miscellaneous helper functions.
+/// </summary>
+
+public static class Helpers {
+  public static void ResetScene() {
+    var activeScene = SceneManager.GetActiveScene();
+    SceneManager.LoadScene(activeScene.name);
+  }
 }

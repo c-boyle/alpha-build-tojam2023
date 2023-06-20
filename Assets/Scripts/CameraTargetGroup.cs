@@ -4,7 +4,10 @@ using Cinemachine;
 using MyBox;
 using UnityEngine;
 
-public class CameraTargetGroup : Singleton<CameraTargetGroup>
-{
-    [field: SerializeField] public CinemachineTargetGroup TargetGroup { get; set; }
+/// <summary>
+/// Offers access to Cinemachine's target group.
+/// </summary>
+
+public class CameraTargetGroup : Singleton<CameraTargetGroup> {
+  [field: SerializeField] public CinemachineTargetGroup TargetGroup { get; set; }
 }
