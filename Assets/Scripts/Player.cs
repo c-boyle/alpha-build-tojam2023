@@ -8,11 +8,12 @@ using UnityEngine.InputSystem;
  *  A class for hooking player input up to their robo.
  */
 
-public class PlayerInput : MonoBehaviour
+public class Player : MonoBehaviour
 {
     [SerializeField] private UnityEngine.InputSystem.PlayerInput input;
     [SerializeField] private RoboMovement movement;
-    [SerializeField] private Combatable combatable;
+    [SerializeField] private Robot combatable;
+    [SerializeField] private Stats stats;
 
     private bool activeMovementInput = false;
     private bool activeLookInput = false;
