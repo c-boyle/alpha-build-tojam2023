@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class Crystal : MonoBehaviour
 {
-    [SerializeField] private PlayerInput player;
+    [SerializeField] private UnityEngine.InputSystem.PlayerInput owner;
+    [SerializeField] private int health = 1;
 
-    // Start is called before the first frame update
-    void Start()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        
+        if (!collision.collider.CompareTag("Crystal"))
+        {
+            health--;
+            if (health <= 0 )
+            {
+                Destroy(owner.gameObject);
+            }
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
