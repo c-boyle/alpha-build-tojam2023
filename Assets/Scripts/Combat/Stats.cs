@@ -47,7 +47,8 @@ public class Stats
         if (onStatChangeActions.TryGetValue(statName, out listener))
         {
             onStatChangeActions[statName] += listener;
-        } else
+        }
+        else
         {
             onStatChangeActions[statName] = listener;
         }
@@ -74,6 +75,7 @@ public class Stats
 
     public void ApplyStats(Dictionary<string, float> statsToApply, bool reverse = false)
     {
+        Debug.Log("Stats applied");
         var statsDic = StatsDic;
         ChangeStats(statsDic, statsToApply, reverse);
         if (!statsToApply.TryGetValue(StatNames.DURATION, out float duration))
@@ -95,33 +97,30 @@ public class Stats
     {
         foreach (var stat in statsToUse)
         {
-            if (statsToChange.TryGetValue(stat.Key, out float savedStatValue))
+            bool multiplier = stat.Key.Substring(stat.Key.Length - 4).Equals("mult");
+            string keyToTry = multiplier ? stat.Key.Substring(0, stat.Key.Length - 5) : stat.Key;
+            if (statsToChange.TryGetValue(keyToTry, out float savedStat))
             {
-                string savedName = stat.Key.ToLower();
-                if (savedName.Substring(savedName.Length - 4).Equals("mult"))
+                if (multiplier)
                 {
-                    string statToMultiplyName = stat.Key.Substring(0, savedName.Length - 5);
-                    if (statsToChange.TryGetValue(statToMultiplyName, out float statToMultiplyValue))
+                    if (reverseChanges)
                     {
-                        if (reverseChanges)
-                        {
-                            statsToChange[statToMultiplyName] = statToMultiplyValue / stat.Value;
-                        }
-                        else
-                        {
-                            statsToChange[statToMultiplyName] = statToMultiplyValue * stat.Value;
-                        }
+                        statsToChange[keyToTry] = savedStat / stat.Value;
+                    }
+                    else
+                    {
+                        statsToChange[keyToTry] = savedStat * stat.Value;
                     }
                 }
                 else
                 {
                     if (reverseChanges)
                     {
-                        statsToChange[stat.Key] = savedStatValue - stat.Value;
+                        statsToChange[keyToTry] = savedStat - stat.Value;
                     }
                     else
                     {
-                        statsToChange[stat.Key] = savedStatValue + stat.Value;
+                        statsToChange[keyToTry] = savedStat + stat.Value;
                     }
                 }
             }
@@ -132,24 +131,21 @@ public class Stats
     {
         foreach (var stat in statsToUse)
         {
-            if (statsToChange.TryGetValue(stat.Key, out Stat savedStat))
+            bool multiplier = stat.Key.Substring(stat.Key.Length - 4).Equals("mult");
+            string keyToTry = multiplier ? stat.Key.Substring(0, stat.Key.Length - 5) : stat.Key;
+            if (statsToChange.TryGetValue(keyToTry, out Stat savedStat))
             {
-                string savedName = savedStat.Name.ToLower();
-                if (savedName.Substring(savedName.Length - 4).Equals("mult"))
+                if (multiplier)
                 {
-                    if (statsToChange.TryGetValue(stat.Key.Substring(0, savedName.Length - 5), out Stat statToMultiply))
+                    if (reverseChanges)
                     {
-                        if (reverseChanges)
-                        {
-                            statToMultiply.Value /= stat.Value;
-                        }
-                        else
-                        {
-                            statToMultiply.Value *= stat.Value;
-                        }
+                        savedStat.Value /= stat.Value;
                     }
-                }
-                else
+                    else
+                    {
+                        savedStat.Value *= stat.Value;
+                    }
+                } else
                 {
                     if (reverseChanges)
                     {

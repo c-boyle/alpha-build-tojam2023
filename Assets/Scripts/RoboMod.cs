@@ -92,15 +92,19 @@ public class RoboMod : MonoBehaviour, ICombatable
             if ((canHoldActivatedAttack && Charging && !activated) || !activated)
             {
                 activated = true;
+                Debug.Log("User effects applied");
                 Owner.RoboStats.ApplyStats(userEffects);
             }
         } else if (activated)
         {
             activated = canHoldActivatedAttack && Charging;
-            Owner.RoboStats.ApplyStats(userEffects, !activated);
+            
             if (activated)
             {
                 animator.Play("Base Layer.Activated", 0, 0f);
+            } else
+            {
+                Owner.RoboStats.ApplyStats(userEffects, true);
             }
         }
     }
