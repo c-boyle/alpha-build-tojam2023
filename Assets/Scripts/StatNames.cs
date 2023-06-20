@@ -12,4 +12,6 @@ public static class StatNames
     public const string HEAT = "heat";
     // Float
     public const string KNOCKBACK = "knockback";
+    // Float in seconds
+    public const string DURATION = "duration";
 }

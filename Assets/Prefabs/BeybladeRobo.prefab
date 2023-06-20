@@ -222,6 +222,8 @@ MonoBehaviour:
     stats:
     - <Name>k__BackingField: speed
       <Value>k__BackingField: 10
+    - <Name>k__BackingField: heat
+      <Value>k__BackingField: 0
   roboModSouth: {fileID: 0}
   roboModNorth: {fileID: 916001974459844375}
   roboModWest: {fileID: 310660232856533043}
@@ -518,7 +520,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4499732690679891331, guid: d03ecc30d0e3e7749b02db9b0fd6d565, type: 3}
       propertyPath: attackContactStats.stats.Array.data[2].<Value>k__BackingField
-      value: 11
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9066941240316155302, guid: d03ecc30d0e3e7749b02db9b0fd6d565, type: 3}
       propertyPath: m_RootOrder

@@ -172,7 +172,9 @@ MonoBehaviour:
     - <Name>k__BackingField: health
       <Value>k__BackingField: -1
     - <Name>k__BackingField: heat
-      <Value>k__BackingField: 5
+      <Value>k__BackingField: 0.02
+    - <Name>k__BackingField: duration
+      <Value>k__BackingField: 3
 --- !u!61 &7382012819272886173
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -120,6 +120,25 @@ public class RoboMod : MonoBehaviour, ICombatable
         }
     }
 
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.collider.gameObject.TryGetComponent<ICombatable>(out var combatable))
+        {
+            var currentStateInfo = animator.GetCurrentAnimatorStateInfo(0);
+            if (currentStateInfo.IsName("Activated"))
+            {
+                if (canHoldActivatedAttack)
+                {
+                    OnAttackContact(collision, combatable);
+                }
+            }
+            else
+            {
+                OnPassiveContact(collision, combatable);
+            }
+        }
+    }
+
     private float GetPercentCharged()
     {
         float percentCharged = 1f;
@@ -134,15 +153,13 @@ public class RoboMod : MonoBehaviour, ICombatable
     {
         float percentCharged = GetPercentCharged();
         var attackStats = percentCharged == 1f ? attackContactStats : attackContactStats.GetCopy(Mathf.Sqrt(percentCharged));
-        if (attackStats.TryGetStatName(StatNames.KNOCKBACK, out float knockback))
-        {
-            collision.rigidbody.velocity = collision.GetContact(0).normal * -knockback;
-        }
+        HandleKnockback(collision, attackStats);
         combatable.ReceiveAttack(attackStats);
     }
 
     private void OnPassiveContact(Collision2D collision, ICombatable combatable)
     {
+        HandleKnockback(collision, passiveContactStats);
         if (combatable is RoboMod roboMod)
         {
             var currentStateInfo = roboMod.animator.GetCurrentAnimatorStateInfo(0);
@@ -153,6 +170,14 @@ public class RoboMod : MonoBehaviour, ICombatable
         } else
         {
             combatable.ReceiveAttack(passiveContactStats);
+        }
+    }
+
+    private void HandleKnockback(Collision2D collision, Stats stats)
+    {
+        if (stats.TryGetStatName(StatNames.KNOCKBACK, out float knockback))
+        {
+            collision.rigidbody.velocity = collision.GetContact(0).normal * -knockback;
         }
     }
 

@@ -76,7 +76,7 @@ public class Stats
     {
         var statsDic = StatsDic;
         ChangeStats(statsDic, statsToApply, reverse);
-        if (!statsToApply.TryGetValue("duration", out float duration))
+        if (!statsToApply.TryGetValue(StatNames.DURATION, out float duration))
         {
             duration = -1f;
         }
@@ -172,7 +172,7 @@ public class Stats
 
 
     [System.Serializable]
-    public struct Stat
+    public class Stat
     {
         [field: SerializeField] public string Name { get; set; }
         [field: SerializeField] public float Value { get; set; }
