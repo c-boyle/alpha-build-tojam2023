@@ -159,13 +159,19 @@ MonoBehaviour:
   userEffects:
     stats: []
   defensiveStats:
-    stats: []
+    stats:
+    - <Name>k__BackingField: knockback
+      <Value>k__BackingField: -25
   passiveContactStats:
-    stats: []
+    stats:
+    - <Name>k__BackingField: health
+      <Value>k__BackingField: -1
+    - <Name>k__BackingField: speed
+      <Value>k__BackingField: -5
   attackContactStats:
     stats:
     - <Name>k__BackingField: knockback
-      <Value>k__BackingField: 20
+      <Value>k__BackingField: 7
     - <Name>k__BackingField: health
       <Value>k__BackingField: -1
 --- !u!61 &1153181236873212141

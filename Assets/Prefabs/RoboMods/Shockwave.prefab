@@ -157,7 +157,9 @@ MonoBehaviour:
   maxChargeTimeCopiesAnimationLength: 1
   maxChargeSeconds: 1
   userEffects:
-    stats: []
+    stats:
+    - <Name>k__BackingField: speed
+      <Value>k__BackingField: 8
   defensiveStats:
     stats: []
   passiveContactStats:
@@ -166,8 +168,8 @@ MonoBehaviour:
     stats:
     - <Name>k__BackingField: knockback
       <Value>k__BackingField: 20
-    - <Name>k__BackingField: health
-      <Value>k__BackingField: -1
+    - <Name>k__BackingField: speed
+      <Value>k__BackingField: -10
 --- !u!58 &4793844235541035627
 CircleCollider2D:
   m_ObjectHideFlags: 0
