@@ -8,7 +8,9 @@ public class RoboMovement : MonoBehaviour
     [SerializeField] private float speed;
 
     private Vector2 mostRecentMove = Vector2.zero;
-
+    /*
+     * TODO: Rework movement so that when you get hit you can't move until you slow to a certain speed 
+     */
     public void Move(Vector2 move)
     {
         mostRecentMove = move;
