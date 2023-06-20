@@ -3,34 +3,74 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+/*
+ *  A class for sending player input to their robo.
+ */
+
 public class PlayerInput : MonoBehaviour
 {
-    private PlayerControls controls;
-    private bool activeMovementInput = false;
+    [SerializeField] private UnityEngine.InputSystem.PlayerInput input;
+    [SerializeField] private RoboMovement movement;
+    [SerializeField] private Combatable combatable;
 
-    private void Awake()
+    private InputValue move = null;
+    private InputAction look = null;
+
+    private void Update()
     {
-        if (controls == null)
+        if (move != null && move.isPressed)
         {
-            controls = new PlayerControls();
+            movement.Move(move.Get<Vector2>());
         }
-        controls.GameControls.Move.performed += ctx => { activeMovementInput = true; };
-        controls.GameControls.Move.canceled += ctx => { activeMovementInput = false; };
-        controls.GameControls.Look.performed += ctx => { if (ctx.control.device is Keyboard) { } };
-        controls.GameControls.UseRoboModSouth.performed += ctx => { };
-        controls.GameControls.UseRoboModNorth.performed += ctx => { };
-        controls.GameControls.UseRoboModEast.performed += ctx => { };
-        controls.GameControls.UseRoboModWest.performed += ctx => { };
-        controls.GameControls.UseSoftware.performed += ctx => { };
+        if (look != null && look.IsPressed())
+        {
+            Vector2 value = look.ReadValue<Vector2>();
+            if (look.activeControl.device is Mouse)
+            {
+                value = Camera.current.ScreenToWorldPoint(value) - transform.position;
+            }
+            movement.Look(value);
+        }
     }
 
-    private void OnEnable()
+    private void OnLook(InputValue value)
     {
-        controls.Enable();
+        if (look == null)
+        {
+            look = input.actions.FindActionMap("GameControls").FindAction("Look");
+        }
     }
 
-    private void OnDisable()
+    private void OnMove(InputValue value)
     {
-        controls.Disable();
+        if (move == null)
+        {
+            move = value;
+        }
+    }
+
+    private void OnUseRoboModNorth(InputValue value)
+    {
+        combatable.UseRoboModNorth();
+    }
+
+    private void OnUseRoboModSouth(InputValue value)
+    {
+        
+    }
+
+    private void OnUseRoboModEast(InputValue value)
+    {
+        combatable.UseRoboModEast();
+    }
+
+    private void OnUseRoboModWest(InputValue value)
+    {
+        combatable.UseRoboModWest();
+    }
+
+    private void OnUseSoftware(InputValue value)
+    {
+        
     }
 }
