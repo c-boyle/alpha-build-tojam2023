@@ -42,7 +42,7 @@ public class PlayerInput : MonoBehaviour
 
         move = actionMap.FindAction("Move");
         move.performed += ctx => { activeMovementInput = true; };
-        move.canceled += ctx => { activeMovementInput = false; };
+        move.canceled += ctx => { activeMovementInput = false; movement.Move(Vector2.zero); };
 
         look = actionMap.FindAction("Look");
         look.performed += ctx => { activeLookInput = true; };

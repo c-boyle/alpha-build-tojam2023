@@ -7,13 +7,22 @@ public class RoboMovement : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private float speed;
 
+    private Vector2 mostRecentMove = Vector2.zero;
+
     public void Move(Vector2 move)
     {
-        rb.velocity = speed * Vector2.Lerp(move.normalized, rb.velocity.normalized, 0.1f);
+        mostRecentMove = move;
     }
 
     public void Look(Vector2 direction)
     {
-        rb.SetRotation(rb.rotation + Vector2.SignedAngle(rb.transform.forward, direction));
+
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
+        rb.MoveRotation(angle);
+    }
+
+    private void FixedUpdate()
+    {
+        rb.velocity = mostRecentMove * speed;
     }
 }
