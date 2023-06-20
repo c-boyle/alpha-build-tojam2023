@@ -17,7 +17,6 @@ GameObject:
   - component: {fileID: 793557433604667089}
   - component: {fileID: 253180802043719801}
   - component: {fileID: 4758518449754559132}
-  - component: {fileID: 2398680697662484912}
   m_Layer: 0
   m_Name: BeybladeRobo
   m_TagString: Robo
@@ -57,13 +56,13 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 10
+  m_LinearDrag: 0.5
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!212 &793557433604667119
 SpriteRenderer:
@@ -222,8 +221,8 @@ MonoBehaviour:
   <Movement>k__BackingField: {fileID: 793557433604667090}
   <RoboStats>k__BackingField:
     stats: []
-  roboModNorth: {fileID: 916001974459844375}
   roboModSouth: {fileID: 0}
+  roboModNorth: {fileID: 916001974459844375}
   roboModWest: {fileID: 310660232856533043}
   roboModEast: {fileID: 1265650431996156102}
 --- !u!61 &253180802043719801
@@ -239,7 +238,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.07782906}
+  m_Offset: {x: 0.0038459003, y: 0.15752998}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -250,7 +249,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.4375, y: 0.11221802}
+  m_Size: {x: 0.62564, y: 0.6189432}
   m_EdgeRadius: 0
 --- !u!61 &4758518449754559132
 BoxCollider2D:
@@ -265,7 +264,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.024963975, y: -0.060207367}
+  m_Offset: {x: -0.0039595068, y: 0.124331236}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -276,33 +275,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.37726235, y: 0.31780422}
-  m_EdgeRadius: 0
---- !u!61 &2398680697662484912
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 793557433604667117}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.030837923, y: 0.28194687}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.125, y: 1.1875}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.18929785, y: 0.37360626}
+  m_Size: {x: 0.74934, y: 0.56085503}
   m_EdgeRadius: 0
 --- !u!1 &3365578295176717554
 GameObject:
@@ -541,6 +514,10 @@ PrefabInstance:
     - target: {fileID: 3231130816480170431, guid: d03ecc30d0e3e7749b02db9b0fd6d565, type: 3}
       propertyPath: m_Name
       value: Drill
+      objectReference: {fileID: 0}
+    - target: {fileID: 4499732690679891331, guid: d03ecc30d0e3e7749b02db9b0fd6d565, type: 3}
+      propertyPath: attackContactStats.stats.Array.data[2].<Value>k__BackingField
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 9066941240316155302, guid: d03ecc30d0e3e7749b02db9b0fd6d565, type: 3}
       propertyPath: m_RootOrder

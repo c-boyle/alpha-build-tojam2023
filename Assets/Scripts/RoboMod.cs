@@ -112,10 +112,10 @@ public class RoboMod : MonoBehaviour, ICombatable
             var currentStateInfo = animator.GetCurrentAnimatorStateInfo(0);
             if (currentStateInfo.IsName("Activated"))
             {
-                OnAttackContact(combatable);
+                OnAttackContact(collision, combatable);
             } else
             {
-                OnPassiveContact(combatable);
+                OnPassiveContact(collision, combatable);
             }
         }
     }
@@ -130,19 +130,18 @@ public class RoboMod : MonoBehaviour, ICombatable
         return percentCharged;
     }
 
-    private void OnAttackContact(ICombatable combatable)
+    private void OnAttackContact(Collision2D collision, ICombatable combatable)
     {
         float percentCharged = GetPercentCharged();
-        if (percentCharged == 1f)
+        var attackStats = percentCharged == 1f ? attackContactStats : attackContactStats.GetCopy(Mathf.Sqrt(percentCharged));
+        if (attackStats.TryGetStatName("knockback", out float knockback))
         {
-            combatable.ReceiveAttack(attackContactStats);
-        } else
-        {
-            combatable.ReceiveAttack(attackContactStats.GetCopy(Mathf.Sqrt(percentCharged)));
+            collision.rigidbody.velocity = collision.GetContact(0).normal * -knockback;
         }
+        combatable.ReceiveAttack(attackStats);
     }
 
-    private void OnPassiveContact(ICombatable combatable)
+    private void OnPassiveContact(Collision2D collision, ICombatable combatable)
     {
         if (combatable is RoboMod roboMod)
         {
@@ -162,5 +161,12 @@ public class RoboMod : MonoBehaviour, ICombatable
         var statsCopy = attackStats.GetCopyDic();
         this.defensiveStats.ApplyToStats(statsCopy);
         Owner.RoboStats.ApplyStats(statsCopy);
+    }
+
+    private bool IsValidTarget(ICombatable combatable)
+    {
+        bool isValidRoboMod = combatable is not RoboMod roboMod || roboMod.Owner != Owner;
+        bool isValidRobo = combatable is not Robo robo || robo != Owner;
+        return isValidRoboMod && isValidRobo;
     }
 }
