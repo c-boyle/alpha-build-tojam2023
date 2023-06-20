@@ -5,12 +5,9 @@ using UnityEngine;
 public class RoboMovement : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private float speed;
+    [SerializeField] private float speed = 5f;
 
     private Vector2 mostRecentMove = Vector2.zero;
-    /*
-     * TODO: Rework movement so that when you get hit you can't move until you slow to a certain speed 
-     */
     public void Move(Vector2 move)
     {
         mostRecentMove = move;
@@ -25,6 +22,8 @@ public class RoboMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.velocity = mostRecentMove * speed;
+        if (rb.velocity.magnitude <= speed * 1.2f) {
+            rb.velocity = mostRecentMove * speed;
+        }
     }
 }
