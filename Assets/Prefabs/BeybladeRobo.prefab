@@ -205,7 +205,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 793557433604667092}
-  speed: 10
 --- !u!114 &793557433604667089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,7 +219,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Movement>k__BackingField: {fileID: 793557433604667090}
   <RoboStats>k__BackingField:
-    stats: []
+    stats:
+    - <Name>k__BackingField: speed
+      <Value>k__BackingField: 10
   roboModSouth: {fileID: 0}
   roboModNorth: {fileID: 916001974459844375}
   roboModWest: {fileID: 310660232856533043}

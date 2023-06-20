@@ -29,6 +29,7 @@ public class Robo : MonoBehaviour, ICombatable
         {
             roboModEast.Owner = this;
         }
+        Movement.Owner = this;
     }
 
     /// <param name="end">True if ending use, false if beginning</param>
@@ -36,7 +37,6 @@ public class Robo : MonoBehaviour, ICombatable
     {
         if (roboModSouth != null)
         {
-            roboModSouth.Owner = this;
             roboModSouth.Charging = !end;
         }
     }
@@ -46,7 +46,6 @@ public class Robo : MonoBehaviour, ICombatable
     {
         if (roboModNorth != null)
         {
-            roboModNorth.Owner = this;
             roboModNorth.Charging = !end;
         }
     }
@@ -56,7 +55,6 @@ public class Robo : MonoBehaviour, ICombatable
     {
         if (roboModEast != null)
         {
-            roboModEast.Owner = this;
             roboModEast.Charging = !end;
         }
     }
@@ -66,7 +64,6 @@ public class Robo : MonoBehaviour, ICombatable
     {
         if (roboModWest != null)
         {
-            roboModWest.Owner = this;
             roboModWest.Charging = !end;
         }
     }

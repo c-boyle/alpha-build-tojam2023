@@ -134,7 +134,7 @@ public class RoboMod : MonoBehaviour, ICombatable
     {
         float percentCharged = GetPercentCharged();
         var attackStats = percentCharged == 1f ? attackContactStats : attackContactStats.GetCopy(Mathf.Sqrt(percentCharged));
-        if (attackStats.TryGetStatName("knockback", out float knockback))
+        if (attackStats.TryGetStatName(StatNames.KNOCKBACK, out float knockback))
         {
             collision.rigidbody.velocity = collision.GetContact(0).normal * -knockback;
         }
@@ -161,12 +161,5 @@ public class RoboMod : MonoBehaviour, ICombatable
         var statsCopy = attackStats.GetCopyDic();
         this.defensiveStats.ApplyToStats(statsCopy);
         Owner.RoboStats.ApplyStats(statsCopy);
-    }
-
-    private bool IsValidTarget(ICombatable combatable)
-    {
-        bool isValidRoboMod = combatable is not RoboMod roboMod || roboMod.Owner != Owner;
-        bool isValidRobo = combatable is not Robo robo || robo != Owner;
-        return isValidRoboMod && isValidRobo;
     }
 }

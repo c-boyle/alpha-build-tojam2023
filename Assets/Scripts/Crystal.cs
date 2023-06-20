@@ -9,7 +9,7 @@ public class Crystal : MonoBehaviour, ICombatable
 
     public void ReceiveAttack(Stats attackStats)
     {
-        if (attackStats.TryGetStatName("health", out float statValue))
+        if (attackStats.TryGetStatName(StatNames.HEALTH, out float statValue))
         {
             health += (int)statValue;
             if (health <= 0)

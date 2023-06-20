@@ -173,8 +173,6 @@ MonoBehaviour:
       <Value>k__BackingField: -1
     - <Name>k__BackingField: heat
       <Value>k__BackingField: 5
-    - <Name>k__BackingField: knockback
-      <Value>k__BackingField: 2
 --- !u!61 &7382012819272886173
 BoxCollider2D:
   m_ObjectHideFlags: 0
