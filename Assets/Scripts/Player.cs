@@ -10,7 +10,22 @@ using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private UnityEngine.InputSystem.PlayerInput input;
+    private PlayerInput _input;
+    public PlayerInput Input { 
+        get
+        {
+            return _input;
+        } 
+        set
+        {
+            if (_input != null)
+            {
+                ReleaseControls();
+            }
+            _input = value;
+            HookupControls();
+        }
+    }
     [SerializeField] private Robo robo;
 
     private bool activeMovementInput = false;
@@ -20,7 +35,6 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        HookupControls();
         CameraTargetGroup.Instance.TargetGroup.AddMember(transform, 1f, 1.5f);
     }
 
@@ -42,27 +56,125 @@ public class Player : MonoBehaviour
         }
     }
 
-    
+    private void OnEnable() {
+        if (Input != null)
+        {
+            Input.actions.FindActionMap("GameControls").Enable();
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (Input != null)
+        {
+            Input.actions.FindActionMap("GameControls").Disable();
+        }
+    }
+
     private void HookupControls()
     {
-        var actionMap = input.actions.FindActionMap("GameControls");
+        var actionMap = Input.actions.FindActionMap("GameControls");
 
         move = actionMap.FindAction("Move");
-        move.performed += ctx => { activeMovementInput = true; };
-        move.canceled += ctx => { activeMovementInput = false; robo.Movement.Move(Vector2.zero); };
+        move.performed += OnMovePerformed;
+        move.canceled += OnMoveCanceled;
 
         look = actionMap.FindAction("Look");
-        look.performed += ctx => { activeLookInput = true; };
-        look.canceled += ctx => { activeLookInput = false; };
+        look.performed += OnLookPerformed;
+        look.canceled += OnLookCanceled;
 
-        actionMap.FindAction("UseRoboModSouth").performed += ctx => { robo.UseRoboModSouth(false); };
-        actionMap.FindAction("UseRoboModNorth").performed += ctx => { robo.UseRoboModNorth(false); };
-        actionMap.FindAction("UseRoboModEast").performed += ctx => { robo.UseRoboModEast(false); };
-        actionMap.FindAction("UseRoboModWest").performed += ctx => { robo.UseRoboModWest(false); };
-        actionMap.FindAction("UseRoboModSouth").canceled += ctx => { robo.UseRoboModSouth(true); };
-        actionMap.FindAction("UseRoboModNorth").canceled += ctx => { robo.UseRoboModNorth(true); };
-        actionMap.FindAction("UseRoboModEast").canceled += ctx => { robo.UseRoboModEast(true); };
-        actionMap.FindAction("UseRoboModWest").canceled += ctx => { robo.UseRoboModWest(true); };
-        actionMap.FindAction("UseSoftware").performed += ctx => { /* TODO */ };
+        actionMap.FindAction("UseRoboModSouth").performed += OnSouthPerformed;
+        actionMap.FindAction("UseRoboModNorth").performed += OnNorthPerformed;
+        actionMap.FindAction("UseRoboModEast").performed += OnEastPerformed;
+        actionMap.FindAction("UseRoboModWest").performed += OnWestPerformed;
+        actionMap.FindAction("UseRoboModSouth").canceled += OnSouthCanceled;
+        actionMap.FindAction("UseRoboModNorth").canceled += OnNorthCanceled;
+        actionMap.FindAction("UseRoboModEast").canceled += OnEastCanceled;
+        actionMap.FindAction("UseRoboModWest").canceled += OnWestCanceled;
+        //actionMap.FindAction("UseSoftware").performed += ctx => { /* TODO */ };
+    }
+
+    private void ReleaseControls()
+    {
+        var actionMap = Input.actions.FindActionMap("GameControls");
+
+        move = actionMap.FindAction("Move");
+        move.performed -= OnMovePerformed;
+        move.canceled -= OnMoveCanceled;
+
+        look = actionMap.FindAction("Look");
+        look.performed -= OnLookPerformed;
+        look.canceled -= OnLookCanceled;
+
+        actionMap.FindAction("UseRoboModSouth").performed -= OnSouthPerformed;
+        actionMap.FindAction("UseRoboModNorth").performed -= OnNorthPerformed;
+        actionMap.FindAction("UseRoboModEast").performed -= OnEastPerformed;
+        actionMap.FindAction("UseRoboModWest").performed -= OnWestPerformed;
+        actionMap.FindAction("UseRoboModSouth").canceled -= OnSouthCanceled;
+        actionMap.FindAction("UseRoboModNorth").canceled -= OnNorthCanceled;
+        actionMap.FindAction("UseRoboModEast").canceled -= OnEastCanceled;
+        actionMap.FindAction("UseRoboModWest").canceled -= OnWestCanceled;
+        //actionMap.FindAction("UseSoftware").performed -= ctx => { /* TODO */ };
+    }
+
+    private void OnMovePerformed(InputAction.CallbackContext ctx)
+    {
+        activeMovementInput = true;
+    }
+
+    private void OnMoveCanceled(InputAction.CallbackContext ctx)
+    {
+        activeMovementInput = false;
+        robo.Movement.Move(Vector2.zero);
+    }
+
+    private void OnLookPerformed(InputAction.CallbackContext ctx)
+    {
+        activeLookInput = true;
+    }
+
+    private void OnLookCanceled(InputAction.CallbackContext ctx)
+    {
+        activeLookInput = false;
+    }
+
+    private void OnSouthPerformed(InputAction.CallbackContext ctx)
+    {
+        robo.UseRoboModSouth(false);
+    }
+
+    private void OnSouthCanceled(InputAction.CallbackContext ctx)
+    {
+        robo.UseRoboModSouth(true);
+    }
+
+    private void OnNorthPerformed(InputAction.CallbackContext ctx)
+    {
+        robo.UseRoboModNorth(false);
+    }
+
+    private void OnNorthCanceled(InputAction.CallbackContext ctx)
+    {
+        robo.UseRoboModNorth(true);
+    }
+
+    private void OnWestPerformed(InputAction.CallbackContext ctx)
+    {
+        robo.UseRoboModWest(false);
+    }
+
+    private void OnWestCanceled(InputAction.CallbackContext ctx)
+    {
+        robo.UseRoboModWest(true);
+    }
+
+    private void OnEastPerformed(InputAction.CallbackContext ctx)
+    {
+        robo.UseRoboModEast(false);
+    }
+
+    private void OnEastCanceled(InputAction.CallbackContext ctx)
+    {
+        robo.UseRoboModEast(true);
     }
 }

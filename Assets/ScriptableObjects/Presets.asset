@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5248a81852c74bc46b7519670fad65b7, type: 3}
+  m_Name: Presets
+  m_EditorClassIdentifier: 
+  <PresetRobos>k__BackingField:
+  - {fileID: 4753299932227599766, guid: 96db3816b332732458855622e5347357, type: 3}
+  - {fileID: 793557433604667091, guid: bc5de9eae0514ba41b2a890d283442fd, type: 3}
+  - {fileID: 4753299932227599766, guid: 253804f978018274d95b6d59e07b4522, type: 3}
+  - {fileID: 4753299932227599766, guid: 414a566def8c31845bbf671a92a34f44, type: 3}
+  <RoboMods>k__BackingField: []

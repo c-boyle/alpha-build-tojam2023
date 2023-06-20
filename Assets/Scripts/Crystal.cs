@@ -56,6 +56,6 @@ public class Crystal : MonoBehaviour, ICombatable
     private IEnumerator DieAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
-        Destroy(rb.gameObject);
+        Destroy(transform.root.gameObject);
     }
 }
