@@ -7,7 +7,8 @@ using UnityEngine.InputSystem;
 public class PresetsScriptableObject : ScriptableObject
 {
     [field: SerializeField] public List<Player> PresetRobos { get; private set; } = new();
-    [field: SerializeField] public List<RoboMod> RoboMods { get; private set; } = new();
+    [field: SerializeField] public List<Player> RoboBodies { get; private set; } = new();
+    [field: SerializeField] public List<Transform> RoboMods { get; private set; } = new();
 
     private readonly Dictionary<int, Player> playerIdToChosenRobo = new();
 

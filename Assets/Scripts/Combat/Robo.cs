@@ -6,28 +6,32 @@ public class Robo : MonoBehaviour, ICombatable
 {
     [field: SerializeField] public RoboMovement Movement { get; set; }
     [field: SerializeField] public Stats RoboStats { get; set; } = new();
-    [SerializeField] private RoboMod roboModSouth;
-    [SerializeField] private RoboMod roboModNorth;
-    [SerializeField] private RoboMod roboModWest;
-    [SerializeField] private RoboMod roboModEast;
+    [field: SerializeField] public RoboMod RoboModSouth { get; set; }
+    [field: SerializeField] public RoboMod RoboModNorth { get; set; }
+    [field: SerializeField] public RoboMod RoboModEast { get; set; }
+    [field: SerializeField] public RoboMod RoboModWest { get; set; }
+    [field: SerializeField] public Transform RoboModSouthPos { get; set; }
+    [field: SerializeField] public Transform RoboModNorthPos { get; set; }
+    [field: SerializeField] public Transform RoboModEastPos { get; set; }
+    [field: SerializeField] public Transform RoboModWestPos { get; set; }
 
     private void Start()
     {
-        if (roboModSouth != null)
+        if (RoboModSouth != null)
         {
-            roboModSouth.Owner = this;
+            RoboModSouth.Owner = this;
         }
-        if (roboModNorth != null)
+        if (RoboModNorth != null)
         {
-            roboModNorth.Owner = this;
+            RoboModNorth.Owner = this;
         }
-        if (roboModWest != null)
+        if (RoboModWest != null)
         {
-            roboModWest.Owner = this;
+            RoboModWest.Owner = this;
         }
-        if (roboModEast != null)
+        if (RoboModEast != null)
         {
-            roboModEast.Owner = this;
+            RoboModEast.Owner = this;
         }
         Movement.Owner = this;
     }
@@ -35,36 +39,36 @@ public class Robo : MonoBehaviour, ICombatable
     /// <param name="end">True if ending use, false if beginning</param>
     public void UseRoboModSouth(bool end)
     {
-        if (roboModSouth != null)
+        if (RoboModSouth != null)
         {
-            roboModSouth.Charging = !end;
+            RoboModSouth.Charging = !end;
         }
     }
 
     /// <param name="end">True if ending use, false if beginning</param>
     public void UseRoboModNorth(bool end)
     {
-        if (roboModNorth != null)
+        if (RoboModNorth != null)
         {
-            roboModNorth.Charging = !end;
+            RoboModNorth.Charging = !end;
         }
     }
 
     /// <param name="end">True if ending use, false if beginning</param>
     public void UseRoboModEast(bool end)
     {
-        if (roboModEast != null)
+        if (RoboModEast != null)
         {
-            roboModEast.Charging = !end;
+            RoboModEast.Charging = !end;
         }
     }
 
     /// <param name="end">True if ending use, false if beginning</param>
     public void UseRoboModWest(bool end)
     {
-        if (roboModWest != null)
+        if (RoboModWest != null)
         {
-            roboModWest.Charging = !end;
+            RoboModWest.Charging = !end;
         }
     }
 

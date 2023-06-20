@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
             HookupControls();
         }
     }
-    [SerializeField] private Robo robo;
+    [field: SerializeField] public Robo Robo { get; set; }
 
     private bool activeMovementInput = false;
     private bool activeLookInput = false;
@@ -42,7 +42,7 @@ public class Player : MonoBehaviour
     {
         if (move != null && activeMovementInput)
         {
-            robo.Movement.Move(move.ReadValue<Vector2>());
+            Robo.Movement.Move(move.ReadValue<Vector2>());
         }
         if (look != null && activeLookInput)
         {
@@ -52,7 +52,7 @@ public class Player : MonoBehaviour
                 // TODO: Cache main camera
                 lookValue = Camera.main.ScreenToWorldPoint(lookValue) - transform.position;
             }
-            robo.Movement.Look(lookValue);
+            Robo.Movement.Look(lookValue);
         }
     }
 
@@ -125,7 +125,7 @@ public class Player : MonoBehaviour
     private void OnMoveCanceled(InputAction.CallbackContext ctx)
     {
         activeMovementInput = false;
-        robo.Movement.Move(Vector2.zero);
+        Robo.Movement.Move(Vector2.zero);
     }
 
     private void OnLookPerformed(InputAction.CallbackContext ctx)
@@ -140,41 +140,41 @@ public class Player : MonoBehaviour
 
     private void OnSouthPerformed(InputAction.CallbackContext ctx)
     {
-        robo.UseRoboModSouth(false);
+        Robo.UseRoboModSouth(false);
     }
 
     private void OnSouthCanceled(InputAction.CallbackContext ctx)
     {
-        robo.UseRoboModSouth(true);
+        Robo.UseRoboModSouth(true);
     }
 
     private void OnNorthPerformed(InputAction.CallbackContext ctx)
     {
-        robo.UseRoboModNorth(false);
+        Robo.UseRoboModNorth(false);
     }
 
     private void OnNorthCanceled(InputAction.CallbackContext ctx)
     {
-        robo.UseRoboModNorth(true);
+        Robo.UseRoboModNorth(true);
     }
 
     private void OnWestPerformed(InputAction.CallbackContext ctx)
     {
-        robo.UseRoboModWest(false);
+        Robo.UseRoboModWest(false);
     }
 
     private void OnWestCanceled(InputAction.CallbackContext ctx)
     {
-        robo.UseRoboModWest(true);
+        Robo.UseRoboModWest(true);
     }
 
     private void OnEastPerformed(InputAction.CallbackContext ctx)
     {
-        robo.UseRoboModEast(false);
+        Robo.UseRoboModEast(false);
     }
 
     private void OnEastCanceled(InputAction.CallbackContext ctx)
     {
-        robo.UseRoboModEast(true);
+        Robo.UseRoboModEast(true);
     }
 }

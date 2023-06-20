@@ -109,3 +109,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerInput: {fileID: 4753299932227599787}
   presetsScriptableObject: {fileID: 11400000, guid: bf5a6d22144d09b41bbfdbb93fdad18f, type: 2}
+  useCompletelyRandomRobo: 1

@@ -155,8 +155,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 8557816348960311872}
   canHoldActivatedAttack: 1
-  maxChargeTimeCopiesAnimationLength: 1
-  maxChargeSeconds: 1
+  maxChargeTimeCopiesAnimationLength: 0
+  maxChargeSeconds: 0
   useParticleEffectForActivated: 1
   activatedParticleEffect: {fileID: 3296661418572929080}
   userEffects:
