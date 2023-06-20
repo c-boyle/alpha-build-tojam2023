@@ -16,7 +16,7 @@ public class RoboMod : MonoBehaviour, ICombatable
     [SerializeField] private Stats passiveContactStats = new();
     [SerializeField] private Stats attackContactStats = new();
 
-    private Robot owner;
+    private Robo owner;
 
     private DateTime chargeStartTime = DateTime.MinValue;
     private DateTime chargeStopTime = DateTime.MinValue;
@@ -92,7 +92,7 @@ public class RoboMod : MonoBehaviour, ICombatable
         }
     }
 
-    private void Init(Robot owner)
+    private void Init(Robo owner)
     {
         this.owner = owner;
     }
@@ -100,14 +100,18 @@ public class RoboMod : MonoBehaviour, ICombatable
     private void Update()
     {
         bool isInActiveState = animator.GetCurrentAnimatorStateInfo(0).IsName("Activated");
+        if (canHoldActivatedAttack && isInActiveState && Charging)
+        {
+            return;
+        }
         if (!activated && isInActiveState)
         {
             activated = true;
             owner.RoboStats.ApplyStats(userEffects);
         } else if (activated && !isInActiveState)
         {
-            activated = false;
-            owner.RoboStats.ApplyStats(userEffects, true);
+            activated = canHoldActivatedAttack && Charging;
+            owner.RoboStats.ApplyStats(userEffects, !activated);
         }
     }
 
