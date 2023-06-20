@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: 95c575bc532c35a46b144dac3e1c4969
-=======
-guid: a7b5f101977e3e14ab6e818125b3c208
->>>>>>> refs/rewritten/combat
+guid: 598fc73f13eae984cbec777bbed500cb
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
