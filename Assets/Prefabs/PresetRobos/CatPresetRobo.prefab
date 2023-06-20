@@ -365,6 +365,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4837432082100013905}
     m_Modifications:
+    - target: {fileID: 3296661418572929080, guid: aac36cea164803c4d8505e8c3700b3b0, type: 3}
+      propertyPath: CollisionModule.collisionMessages
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4402479306761142009, guid: aac36cea164803c4d8505e8c3700b3b0, type: 3}
       propertyPath: m_Name
       value: Flamethrower

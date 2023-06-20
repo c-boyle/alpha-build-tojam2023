@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Crystal : MonoBehaviour, ICombatable
 {
-    [SerializeField] private UnityEngine.InputSystem.PlayerInput owner;
     [SerializeField] private Animator animator;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private int health = 1;
@@ -57,6 +56,6 @@ public class Crystal : MonoBehaviour, ICombatable
     private IEnumerator DieAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
-        Destroy(owner.gameObject);
+        Destroy(rb.gameObject);
     }
 }

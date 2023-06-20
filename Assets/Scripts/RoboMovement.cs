@@ -5,6 +5,7 @@ using UnityEngine;
 public class RoboMovement : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D rb;
+    public Rigidbody2D Rigidbody { get => rb; }
     public Robo Owner { get; set; }
 
     private Vector2 mostRecentMove = Vector2.zero;

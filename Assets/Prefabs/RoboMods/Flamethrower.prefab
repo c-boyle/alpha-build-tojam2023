@@ -160,17 +160,15 @@ MonoBehaviour:
   useParticleEffectForActivated: 1
   activatedParticleEffect: {fileID: 3296661418572929080}
   userEffects:
-    stats: []
+    stats:
+    - <Name>k__BackingField: speed_mult
+      <Value>k__BackingField: 0.7
   defensiveStats:
     stats: []
   passiveContactStats:
     stats: []
   attackContactStats:
-    stats:
-    - <Name>k__BackingField: knockback
-      <Value>k__BackingField: 20
-    - <Name>k__BackingField: health
-      <Value>k__BackingField: -1
+    stats: []
 --- !u!61 &1153181236873212141
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -214,7 +212,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7715846515059905464, guid: f6ca1d6904eb53649bb369601c947da2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.874
+      value: 1.46
       objectReference: {fileID: 0}
     - target: {fileID: 7715846515059905464, guid: f6ca1d6904eb53649bb369601c947da2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -249,6 +247,38 @@ PrefabInstance:
       value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 7715846515059905466, guid: f6ca1d6904eb53649bb369601c947da2, type: 3}
+      propertyPath: CollisionModule.type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7715846515059905466, guid: f6ca1d6904eb53649bb369601c947da2, type: 3}
+      propertyPath: CollisionModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7715846515059905466, guid: f6ca1d6904eb53649bb369601c947da2, type: 3}
+      propertyPath: CollisionModule.collisionMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7715846515059905466, guid: f6ca1d6904eb53649bb369601c947da2, type: 3}
+      propertyPath: CollisionModule.m_Bounce.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7715846515059905466, guid: f6ca1d6904eb53649bb369601c947da2, type: 3}
+      propertyPath: CollisionModule.m_Dampen.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7715846515059905466, guid: f6ca1d6904eb53649bb369601c947da2, type: 3}
+      propertyPath: CollisionModule.collisionMessages
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7715846515059905466, guid: f6ca1d6904eb53649bb369601c947da2, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7715846515059905466, guid: f6ca1d6904eb53649bb369601c947da2, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7715846515059905466, guid: f6ca1d6904eb53649bb369601c947da2, type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
       value: 0.740566
       objectReference: {fileID: 0}
@@ -259,6 +289,10 @@ PrefabInstance:
     - target: {fileID: 7715846515059905466, guid: f6ca1d6904eb53649bb369601c947da2, type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7715846515059905466, guid: f6ca1d6904eb53649bb369601c947da2, type: 3}
+      propertyPath: CollisionModule.m_EnergyLossOnCollision.scalar
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 7715846515059905468, guid: f6ca1d6904eb53649bb369601c947da2, type: 3}
       propertyPath: m_Name
@@ -272,10 +306,6 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: -423400715
       objectReference: {fileID: 0}
-    - target: {fileID: 7715846515059905469, guid: f6ca1d6904eb53649bb369601c947da2, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 980fad30bd530de4badbda407758bdbe, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6ca1d6904eb53649bb369601c947da2, type: 3}
 --- !u!198 &3296661418572929080 stripped
@@ -305,6 +335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba8ec88d2dda975428a797e4123abeec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  owner: {fileID: 8557816348960311875}
   projectileStats:
     stats:
     - <Name>k__BackingField: heat
