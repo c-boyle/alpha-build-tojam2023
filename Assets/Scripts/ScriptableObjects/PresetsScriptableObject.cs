@@ -6,5 +6,5 @@ using UnityEngine;
 public class PresetsScriptableObject : ScriptableObject
 {
     [SerializeField] private List<Player> presetRobos = new();
-    [SerializeField] private List<>
+    //[SerializeField] private List<>
 }

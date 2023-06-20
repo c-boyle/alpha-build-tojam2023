@@ -109,11 +109,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 372
         width: 159
         height: 93
       alignment: 9
-      pivot: {x: 0.49782524, y: 0.8495117}
+      pivot: {x: 0.5031446, y: 0.8064516}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -130,11 +130,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 159
-        y: 0
+        y: 372
         width: 159
         height: 93
       alignment: 9
-      pivot: {x: 0.4978253, y: 0.8495117}
+      pivot: {x: 0.49685532, y: 0.83870965}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -151,11 +151,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 318
-        y: 0
+        y: 372
         width: 159
         height: 93
       alignment: 9
-      pivot: {x: 0.4934756, y: 0.8718209}
+      pivot: {x: 0.49685532, y: 0.8494624}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -172,11 +172,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 477
-        y: 0
+        y: 372
         width: 159
         height: 93
       alignment: 9
-      pivot: {x: 0.497825, y: 0.88669384}
+      pivot: {x: 0.49685532, y: 0.86021507}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -192,12 +192,12 @@ TextureImporter:
       name: Crystal_Explosion_4
       rect:
         serializedVersion: 2
-        x: 636
-        y: 0
+        x: 635
+        y: 371
         width: 159
         height: 93
       alignment: 9
-      pivot: {x: 0.49130076, y: 0.8829756}
+      pivot: {x: 0.5031446, y: 0.8817204}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -214,11 +214,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 795
-        y: 0
+        y: 372
         width: 159
         height: 93
       alignment: 9
-      pivot: {x: 0.5021746, y: 0.88669384}
+      pivot: {x: 0.49056602, y: 0.827957}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -235,11 +235,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 954
-        y: 0
+        y: 372
         width: 159
         height: 93
       alignment: 9
-      pivot: {x: 0.497825, y: 0.79002035}
+      pivot: {x: 0.5094339, y: 0.87096775}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -256,11 +256,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1113
-        y: 0
+        y: 372
         width: 159
         height: 93
       alignment: 9
-      pivot: {x: 0.493475, y: 0.7714293}
+      pivot: {x: 0.49056602, y: 0.8494624}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -276,12 +276,12 @@ TextureImporter:
       name: Crystal_Explosion_8
       rect:
         serializedVersion: 2
-        x: 1272
-        y: 0
+        x: 0
+        y: 279
         width: 159
         height: 93
       alignment: 9
-      pivot: {x: 0.493475, y: 0.86438453}
+      pivot: {x: 0.4779874, y: 0.9032258}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -297,12 +297,12 @@ TextureImporter:
       name: Crystal_Explosion_9
       rect:
         serializedVersion: 2
-        x: 1431
-        y: 0
+        x: 159
+        y: 279
         width: 159
         height: 93
       alignment: 9
-      pivot: {x: 0.497825, y: 0.86066633}
+      pivot: {x: 0.49056602, y: 0.87096775}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -318,12 +318,12 @@ TextureImporter:
       name: Crystal_Explosion_10
       rect:
         serializedVersion: 2
-        x: 1590
-        y: 0
+        x: 318
+        y: 279
         width: 159
         height: 93
       alignment: 9
-      pivot: {x: 0.50217426, y: 0.9201577}
+      pivot: {x: 0.5094339, y: 0.87096775}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -339,12 +339,12 @@ TextureImporter:
       name: Crystal_Explosion_11
       rect:
         serializedVersion: 2
-        x: 1749
-        y: 0
+        x: 477
+        y: 279
         width: 159
         height: 93
       alignment: 9
-      pivot: {x: 0.49999923, y: 0.95362157}
+      pivot: {x: 0.5031446, y: 0.8494624}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -360,12 +360,12 @@ TextureImporter:
       name: Crystal_Explosion_12
       rect:
         serializedVersion: 2
-        x: 1908
-        y: 0
+        x: 636
+        y: 279
         width: 159
         height: 93
       alignment: 9
-      pivot: {x: 0.50217426, y: 0.94990337}
+      pivot: {x: 0.5094339, y: 0.87096775}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -381,12 +381,12 @@ TextureImporter:
       name: Crystal_Explosion_13
       rect:
         serializedVersion: 2
-        x: 2067
-        y: 0
+        x: 795
+        y: 279
         width: 159
         height: 93
       alignment: 9
-      pivot: {x: 0.5, y: 0.9350305}
+      pivot: {x: 0.5031446, y: 0.8924731}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -402,12 +402,12 @@ TextureImporter:
       name: Crystal_Explosion_14
       rect:
         serializedVersion: 2
-        x: 2226
-        y: 0
+        x: 954
+        y: 279
         width: 159
         height: 93
       alignment: 9
-      pivot: {x: 0.50869846, y: 0.8941302}
+      pivot: {x: 0.5031446, y: 0.8494624}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -415,6 +415,510 @@ TextureImporter:
       bones: []
       spriteID: aa534b4be63e3d5438f1c8ba7a38da93
       internalID: -1767321996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crystal_Explosion_15
+      rect:
+        serializedVersion: 2
+        x: 1113
+        y: 279
+        width: 159
+        height: 93
+      alignment: 9
+      pivot: {x: 0.49056602, y: 0.8494624}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6ccc0ecf0fd87648a7ed23ec66ebf60
+      internalID: 988226116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crystal_Explosion_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 186
+        width: 159
+        height: 93
+      alignment: 9
+      pivot: {x: 0.5094339, y: 0.8494624}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df48d743cea0afe4fa2251d0622990f1
+      internalID: -516226912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crystal_Explosion_17
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 186
+        width: 159
+        height: 93
+      alignment: 9
+      pivot: {x: 0.5031446, y: 0.8924731}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8193a40c51b9ae14fbc4f6edbd89b1b3
+      internalID: -1580641243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crystal_Explosion_18
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 186
+        width: 159
+        height: 93
+      alignment: 9
+      pivot: {x: 0.5031446, y: 0.87096775}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e5af7e88666e3e4bb2ac7e89e0758ac
+      internalID: -527010213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crystal_Explosion_19
+      rect:
+        serializedVersion: 2
+        x: 477
+        y: 186
+        width: 159
+        height: 93
+      alignment: 9
+      pivot: {x: 0.5031446, y: 0.87096775}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 589dc5de6eb95d640880aeda3c865e6a
+      internalID: 1952649340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crystal_Explosion_20
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 186
+        width: 159
+        height: 93
+      alignment: 9
+      pivot: {x: 0.5031446, y: 0.8924731}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aef2da0fa49bfcc4b92855013478e6b3
+      internalID: -111511500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crystal_Explosion_21
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 186
+        width: 159
+        height: 93
+      alignment: 9
+      pivot: {x: 0.49056602, y: 0.827957}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb97eac0f04f1294e88bc3f6c5952b16
+      internalID: -12148026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crystal_Explosion_22
+      rect:
+        serializedVersion: 2
+        x: 954
+        y: 186
+        width: 159
+        height: 93
+      alignment: 9
+      pivot: {x: 0.5031446, y: 0.8494624}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 055393aa5e6e77246a6d0cda22d7bcab
+      internalID: -438857783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crystal_Explosion_23
+      rect:
+        serializedVersion: 2
+        x: 1113
+        y: 186
+        width: 159
+        height: 93
+      alignment: 9
+      pivot: {x: 0.5031446, y: 0.8494624}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3769eb9b849f9e4897e168311fdf6d9
+      internalID: 1530495709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crystal_Explosion_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 93
+        width: 159
+        height: 93
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b7529f88f8d5f6499878176d504a10e
+      internalID: -441054870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crystal_Explosion_25
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 93
+        width: 159
+        height: 93
+      alignment: 9
+      pivot: {x: 0.5031446, y: 0.87096775}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dacfd56167f5ba4bb55d01516a65061
+      internalID: -377517945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crystal_Explosion_26
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 93
+        width: 159
+        height: 93
+      alignment: 9
+      pivot: {x: 0.4779874, y: 0.8172043}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f782c372e05a7a146bf0d8a2248313b7
+      internalID: -258890527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crystal_Explosion_27
+      rect:
+        serializedVersion: 2
+        x: 477
+        y: 93
+        width: 159
+        height: 93
+      alignment: 9
+      pivot: {x: 0.49056602, y: 0.8924731}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76284030628697d45bdbb56df25e3186
+      internalID: 1827856499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crystal_Explosion_28
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 93
+        width: 159
+        height: 93
+      alignment: 9
+      pivot: {x: 0.5031446, y: 0.87096775}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5596fb1a6381864cabfc26269cc7af7
+      internalID: -508957905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crystal_Explosion_29
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 93
+        width: 159
+        height: 93
+      alignment: 9
+      pivot: {x: 0.5031446, y: 0.8494624}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5dc9dfd3349695439a3a41fba8e1f34
+      internalID: 77926285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crystal_Explosion_30
+      rect:
+        serializedVersion: 2
+        x: 954
+        y: 93
+        width: 159
+        height: 93
+      alignment: 9
+      pivot: {x: 0.52201253, y: 0.827957}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8074c2daea5a324abb450671bf482fd
+      internalID: -373337208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crystal_Explosion_31
+      rect:
+        serializedVersion: 2
+        x: 1113
+        y: 93
+        width: 159
+        height: 93
+      alignment: 9
+      pivot: {x: 0.5031446, y: 0.79569894}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 182b130bf781216499ca16bdce0683ee
+      internalID: 900146779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crystal_Explosion_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 159
+        height: 93
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be530437af463bb40ba1ae943fe007b6
+      internalID: 2007505246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crystal_Explosion_33
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 0
+        width: 159
+        height: 93
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb26df4b65fb3f24f92d14fe48f0640c
+      internalID: -59150361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crystal_Explosion_34
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 0
+        width: 159
+        height: 93
+      alignment: 9
+      pivot: {x: 0.4779874, y: 0.827957}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f77358c7653bbad4c88cdcb5c6296dbc
+      internalID: -1189674395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crystal_Explosion_35
+      rect:
+        serializedVersion: 2
+        x: 477
+        y: 0
+        width: 159
+        height: 93
+      alignment: 9
+      pivot: {x: 0.5031446, y: 0.827957}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbcf9ddfc3b57124daf9bee5d03a9caa
+      internalID: -346418351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crystal_Explosion_36
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 0
+        width: 159
+        height: 93
+      alignment: 9
+      pivot: {x: 0.5094339, y: 0.87096775}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: baccd3593c912084c80f710e8672ce08
+      internalID: -1355299368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crystal_Explosion_37
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 0
+        width: 159
+        height: 93
+      alignment: 9
+      pivot: {x: 0.49056602, y: 0.827957}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8364f3fb325ec834f978f4848702f471
+      internalID: -1714017960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crystal_Explosion_38
+      rect:
+        serializedVersion: 2
+        x: 954
+        y: 0
+        width: 159
+        height: 93
+      alignment: 9
+      pivot: {x: 0.5031446, y: 0.79569894}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b869a24de16a2d4ebeb98a890637769
+      internalID: 1528518474
       vertices: []
       indices: 
       edges: []
@@ -437,8 +941,32 @@ TextureImporter:
       Crystal_Explosion_12: 1608364400
       Crystal_Explosion_13: -212762135
       Crystal_Explosion_14: -1767321996
+      Crystal_Explosion_15: 988226116
+      Crystal_Explosion_16: -516226912
+      Crystal_Explosion_17: -1580641243
+      Crystal_Explosion_18: -527010213
+      Crystal_Explosion_19: 1952649340
       Crystal_Explosion_2: 1535689189
+      Crystal_Explosion_20: -111511500
+      Crystal_Explosion_21: -12148026
+      Crystal_Explosion_22: -438857783
+      Crystal_Explosion_23: 1530495709
+      Crystal_Explosion_24: -441054870
+      Crystal_Explosion_25: -377517945
+      Crystal_Explosion_26: -258890527
+      Crystal_Explosion_27: 1827856499
+      Crystal_Explosion_28: -508957905
+      Crystal_Explosion_29: 77926285
       Crystal_Explosion_3: 1706238386
+      Crystal_Explosion_30: -373337208
+      Crystal_Explosion_31: 900146779
+      Crystal_Explosion_32: 2007505246
+      Crystal_Explosion_33: -59150361
+      Crystal_Explosion_34: -1189674395
+      Crystal_Explosion_35: -346418351
+      Crystal_Explosion_36: -1355299368
+      Crystal_Explosion_37: -1714017960
+      Crystal_Explosion_38: 1528518474
       Crystal_Explosion_4: -275986411
       Crystal_Explosion_5: 1077686661
       Crystal_Explosion_6: -810467651

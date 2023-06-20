@@ -16,11 +16,11 @@ public class Crystal : MonoBehaviour, ICombatable
         {
             if (_deathClip == null)
             {
-                foreach (var clipInfo in animator.GetCurrentAnimatorClipInfo(0))
+                foreach (var clip in animator.runtimeAnimatorController.animationClips)
                 {
-                    if (clipInfo.clip.name.Contains("death"))
+                    if (clip.name.Contains("death"))
                     {
-                        _deathClip = clipInfo.clip;
+                        _deathClip = clip;
                     }
                 }
             }
