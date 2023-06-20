@@ -157,15 +157,19 @@ MonoBehaviour:
   maxChargeTimeCopiesAnimationLength: 1
   maxChargeSeconds: 1
   userEffects:
-    stats: []
+    stats:
+    - <Name>k__BackingField: speed
+      <Value>k__BackingField: 5
   defensiveStats:
-    stats: []
+    stats:
+    - <Name>k__BackingField: knockback
+      <Value>k__BackingField: -10
   passiveContactStats:
     stats: []
   attackContactStats:
     stats:
     - <Name>k__BackingField: knockback
-      <Value>k__BackingField: 20
+      <Value>k__BackingField: 10
     - <Name>k__BackingField: health
       <Value>k__BackingField: -1
 --- !u!61 &4963585148565752886

@@ -158,18 +158,20 @@ MonoBehaviour:
   maxChargeSeconds: 1
   userEffects:
     stats:
-    - <Name>k__BackingField: 
-      <Value>k__BackingField: 0
+    - <Name>k__BackingField: speed
+      <Value>k__BackingField: -5
   defensiveStats:
     stats: []
   passiveContactStats:
     stats: []
   attackContactStats:
     stats:
-    - <Name>k__BackingField: knockback
-      <Value>k__BackingField: 20
     - <Name>k__BackingField: health
       <Value>k__BackingField: -1
+    - <Name>k__BackingField: speed
+      <Value>k__BackingField: -100
+    - <Name>k__BackingField: duration
+      <Value>k__BackingField: 2
 --- !u!61 &1153181236873212141
 BoxCollider2D:
   m_ObjectHideFlags: 0
