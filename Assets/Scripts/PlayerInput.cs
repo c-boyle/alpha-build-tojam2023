@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 /*
- *  A class for sending player input to their robo.
+ *  A class for hooking player input up to their robo.
  */
 
 public class PlayerInput : MonoBehaviour
@@ -13,64 +13,45 @@ public class PlayerInput : MonoBehaviour
     [SerializeField] private RoboMovement movement;
     [SerializeField] private Combatable combatable;
 
-    private InputValue move = null;
+    private bool activeMovementInput = false;
+    private bool activeLookInput = false;
+    private InputAction move = null;
     private InputAction look = null;
+
+    private void Awake()
+    {
+        HookupControls();
+    }
 
     private void Update()
     {
-        if (move != null && move.isPressed)
+        if (move != null && activeMovementInput)
         {
-            movement.Move(move.Get<Vector2>());
+            movement.Move(move.ReadValue<Vector2>());
         }
-        if (look != null && look.IsPressed())
+        if (look != null && activeLookInput)
         {
-            Vector2 value = look.ReadValue<Vector2>();
-            if (look.activeControl.device is Mouse)
-            {
-                value = Camera.current.ScreenToWorldPoint(value) - transform.position;
-            }
-            movement.Look(value);
+            movement.Look(look.ReadValue<Vector2>());
         }
     }
 
-    private void OnLook(InputValue value)
+    
+    private void HookupControls()
     {
-        if (look == null)
-        {
-            look = input.actions.FindActionMap("GameControls").FindAction("Look");
-        }
-    }
+        var actionMap = input.actions.FindActionMap("GameControls");
 
-    private void OnMove(InputValue value)
-    {
-        if (move == null)
-        {
-            move = value;
-        }
-    }
+        move = actionMap.FindAction("Move");
+        move.performed += ctx => { activeMovementInput = true; };
+        move.canceled += ctx => { activeMovementInput = false; };
 
-    private void OnUseRoboModNorth(InputValue value)
-    {
-        combatable.UseRoboModNorth();
-    }
+        look = actionMap.FindAction("Look");
+        look.performed += ctx => { activeLookInput = true; };
+        look.canceled += ctx => { activeLookInput = false; };
 
-    private void OnUseRoboModSouth(InputValue value)
-    {
-        
-    }
-
-    private void OnUseRoboModEast(InputValue value)
-    {
-        combatable.UseRoboModEast();
-    }
-
-    private void OnUseRoboModWest(InputValue value)
-    {
-        combatable.UseRoboModWest();
-    }
-
-    private void OnUseSoftware(InputValue value)
-    {
-        
+        actionMap.FindAction("UseRoboModSouth").performed += ctx => { /* TODO */ };
+        actionMap.FindAction("UseRoboModNorth").performed += ctx => { combatable.UseRoboModNorth(); };
+        actionMap.FindAction("UseRoboModEast").performed += ctx => { combatable.UseRoboModEast(); };
+        actionMap.FindAction("UseRoboModWest").performed += ctx => { combatable.UseRoboModWest(); };
+        actionMap.FindAction("UseSoftware").performed += ctx => { /* TODO */ };
     }
 }
