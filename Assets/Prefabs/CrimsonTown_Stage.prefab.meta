@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: b4b82ff225153e14ca2bc972ea76aa04
+=======
+guid: 6e6e9e916c2437e4facd275e87f207b1
+>>>>>>> refs/rewritten/combat
 PrefabImporter:
   externalObjects: {}
   userData: 
