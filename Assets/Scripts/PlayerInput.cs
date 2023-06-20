@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,6 +22,7 @@ public class PlayerInput : MonoBehaviour
     private void Awake()
     {
         HookupControls();
+        CameraTargetGroup.Instance.TargetGroup.AddMember(transform, 1f, 1.5f);
     }
 
     private void Update()
