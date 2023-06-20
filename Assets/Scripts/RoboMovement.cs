@@ -8,6 +8,7 @@ public class RoboMovement : MonoBehaviour
     public Robo Owner { get; set; }
 
     private Vector2 mostRecentMove = Vector2.zero;
+    private float maxControlSpeedMult = 1.2f;
 
     public void Move(Vector2 move)
     {
@@ -25,7 +26,13 @@ public class RoboMovement : MonoBehaviour
     {
         if (Owner.RoboStats.TryGetStatName(StatNames.SPEED, out float speed))
         {
-            if (rb.velocity.magnitude <= speed * 1.2f)
+            float maxControlSpeed = speed * maxControlSpeedMult;
+            if (Owner.RoboStats.TryGetStatName(StatNames.HEAT, out float heat))
+            {
+                speed *= Mathf.Max(1f - heat, 0.2f);
+                maxControlSpeed += heat * maxControlSpeed;
+            }
+            if (rb.velocity.magnitude <= maxControlSpeed)
             {
                 rb.velocity = mostRecentMove * speed;
             }
