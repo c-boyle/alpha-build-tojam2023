@@ -31,7 +31,12 @@ public class PlayerInput : MonoBehaviour
         }
         if (look != null && activeLookInput)
         {
-            movement.Look(look.ReadValue<Vector2>());
+            Vector2 lookValue = look.ReadValue<Vector2>();
+            if (look.activeControl.device is Mouse)
+            {
+                lookValue = Camera.main.ScreenToWorldPoint(lookValue) - transform.position;
+            }
+            movement.Look(lookValue);
         }
     }
 
