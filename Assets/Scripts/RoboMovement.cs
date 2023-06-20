@@ -27,6 +27,7 @@ public class RoboMovement : MonoBehaviour
     {
         if (Owner.RoboStats.TryGetStatName(StatNames.SPEED, out float speed))
         {
+            speed = Mathf.Max(speed, 0f);
             float maxControlSpeed = speed * maxControlSpeedMult;
             if (Owner.RoboStats.TryGetStatName(StatNames.HEAT, out float heat))
             {
