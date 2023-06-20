@@ -410,6 +410,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   owner: {fileID: 793557433604667118}
+  rb: {fileID: 793557433604667092}
   health: 1
 --- !u!1 &4293807494273064210
 GameObject:

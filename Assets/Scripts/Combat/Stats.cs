@@ -75,7 +75,6 @@ public class Stats
 
     public void ApplyStats(Dictionary<string, float> statsToApply, bool reverse = false)
     {
-        Debug.Log("Stats applied");
         var statsDic = StatsDic;
         ChangeStats(statsDic, statsToApply, reverse);
         if (!statsToApply.TryGetValue(StatNames.DURATION, out float duration))
