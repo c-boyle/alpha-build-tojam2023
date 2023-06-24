@@ -2,18 +2,19 @@
 A top-down multiplayer game where you battle as customizable, modular robos. 
 The heart of a robo is its power crystal, break it with a hit from your robo-mods or smash it on a wall to destroy your opponent.
 
-![AlphaBuildGif](https://github.com/c-boyle/alpha-build-tojam2023/assets/62191940/d64f03f3-96d2-4dde-a9f9-a8aa74cfe491)
+![AlphaBuildGif](https://github.com/c-boyle/alpha-build-tojam2023/assets/62191940/93438c2f-2876-47f4-bc3a-76f27e604f52)
 
 # Screenshots & Videos
 
 ### Gameplay video
-https://github.com/c-boyle/alpha-build-tojam2023/assets/62191940/ede109ff-dce1-44ed-aa97-26e18188a824
+
+https://github.com/c-boyle/alpha-build-tojam2023/assets/62191940/23725fd3-7476-4c7a-b6fb-aa08b4a56407
 
 ### Arena selection menu
-![arena-selection](https://github.com/c-boyle/alpha-build-tojam2023/assets/62191940/cac862a0-316e-4e1b-a2c7-0309ae339e61)
+![arena-selection](https://github.com/c-boyle/alpha-build-tojam2023/assets/62191940/a5f8137d-6d15-44a8-b030-542823c0ea8d)
 
 ### Flamethrower battle
-![image](https://github.com/c-boyle/alpha-build-tojam2023/assets/62191940/f31e0852-ca62-4cbb-95e0-cf482f1de888)
+![image](https://github.com/c-boyle/alpha-build-tojam2023/assets/62191940/c6db1b39-9412-4ede-ac66-9bb947190fe9)
 
 # [TOJam 2023](https://www.tojam.ca/)
 This game was built during and for TOJam 2023. This repository is a duplicate of the original project repository. I made this duplicate to preserve and show off what we accomplished during the jam in a public repo. Note: due to the duplication process the commit dates are innacurrate.
